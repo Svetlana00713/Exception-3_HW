@@ -45,7 +45,7 @@ public class Main {
         System.out.println("Данные успешно записаны в файл " + fileName);
     }
 
-    private static void validateData(String lastName, String firstName, String middleName, String birthDate, String phoneNumber, String gender) {
+    private static void validateData(String lastName, String firstName, String surname, String birthDate, String phoneNumber, String gender) {
         if (!birthDate.matches("\\d{2}.\\d{2}.\\d{4}")) {
             throw new IllegalArgumentException("Неверный формат даты рождения. Ожидается dd.mm.yyyy");
         }
