@@ -26,17 +26,17 @@ public class Main {
             throw new IllegalArgumentException("Неверное количество данных. Ожидается 6 элементов.");
         }
 
-        String lastName = userData[0];
-        String firstName = userData[1];
+        String name = userData[0];
+        String patronymic = userData[1];
         String surname = userData[2];
         String birthDate = userData[3];
         String phoneNumber = userData[4];
         String gender = userData[5];
 
-        validateData(lastName, firstName, surname, birthDate, phoneNumber, gender);
+        validateData(name, patronymic, surname, birthDate, phoneNumber, gender);
 
-        String fileName = lastName + ".txt";
-        String userDataString = lastName + " " + firstName + " " + surname + ", " + birthDate + ", " + phoneNumber + ", " + gender;
+        String fileName = name + ".txt";
+        String userDataString = name + " " + patronymic + " " + surname + ", " + birthDate + ", " + phoneNumber + ", " + gender;
 
         FileWriter fileWriter = new FileWriter(fileName, true);
         fileWriter.write(userDataString + System.lineSeparator());
@@ -45,7 +45,7 @@ public class Main {
         System.out.println("Данные успешно записаны в файл " + fileName);
     }
 
-    private static void validateData(String lastName, String firstName, String surname, String birthDate, String phoneNumber, String gender) {
+    private static void validateData(String name, String patronymic, String surname, String birthDate, String phoneNumber, String gender) {
         if (!birthDate.matches("\\d{2}.\\d{2}.\\d{4}")) {
             throw new IllegalArgumentException("Неверный формат даты рождения. Ожидается dd.mm.yyyy");
         }
